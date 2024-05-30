@@ -1,0 +1,10 @@
+matplotlib
+ipyvuetify
+ipywidgets
+plotly
+pytest
+black
+flake8
+isort
+pre-commit
+pylint

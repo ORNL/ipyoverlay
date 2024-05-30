@@ -1,0 +1,15 @@
+{
+  "name": "ipyoverlay",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "eslint": "8.56.0",
+    "eslint-plugin-vue": "9.22.0",
+    "eslint-plugin-jsdoc": "48.2.1"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not IE 11"
+  ]
+}

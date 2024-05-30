@@ -1,0 +1,18 @@
+[tool.isort]
+profile = "black"
+
+[tool.pylint]
+# W0612: unused-variable (I trust black/flake8's unused variable rules more.)
+# W0613: unused-argument
+# W0511: fixme  (it's okay for some todos to stick around)
+# W0223: abstract-method (tentatively disabling this, complaining about no copy/deepcopy on widget classes
+# C0103: invalid-name (it doesn't like 'df', but this is convention.)
+# E1120: no-value-for-parameter (curifactory stages expect not passing function arguments.)
+# I1101: c-extension-no-member (don't penalize not having python source?)
+# R0903: too-few-public-methods (what a BS complaint.)
+# R0914: too-many-locals (I disagree that this is a useful measure of complexity.
+# R1735: use-dict-literal (strongly disagree, I prefer dict(some="thing") to {"some": "thing"}
+# R0901: too-many-ancestors (can't help it, have to extend widget which has a long chain)
+# R0902: too-many-instance-attributes (vuetify widgets use attributes to comm to js, this is required)
+# R0913: too-many-arguments (look, parameterization has to occur _somewhere_.)
+disable = ["W0613", "W0511", "R1735", "C0103", "E1120", "I1101", "R0903", "W0612", "R0914", "R0901", "R0902", "W0223", "R0913"]
