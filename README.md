@@ -1,7 +1,5 @@
 # IPyOverlay
 
-The code for this project has not yet finished going through our open source release process.
-
 ![Demo GIF of interacting with a plot with ipyoverlay](img/demo.gif)
 A GIF demoing interaction with an ipympl Matplotlib figure. In the demo,
 Clicking a cluster opens a pop-up window with a new figure.
