@@ -8,3 +8,5 @@ flake8
 isort
 pre-commit
 pylint
+build
+twine
