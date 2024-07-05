@@ -1,0 +1,37 @@
+﻿ipyoverlay.mpl.event.MPLEventHandler
+====================================
+
+.. currentmodule:: ipyoverlay.mpl.event
+
+.. autoclass:: MPLEventHandler
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~MPLEventHandler.__init__
+      ~MPLEventHandler.connect
+      ~MPLEventHandler.disconnect
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~MPLEventHandler.button
+      ~MPLEventHandler.callback_id
+      ~MPLEventHandler.tolerance
+      ~MPLEventHandler.axes
+      ~MPLEventHandler.callback
+      ~MPLEventHandler.points_x
+      ~MPLEventHandler.points_y

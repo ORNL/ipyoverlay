@@ -1,0 +1,104 @@
+﻿ipyoverlay.connection.Connection
+================================
+
+.. currentmodule:: ipyoverlay.connection
+
+.. autoclass:: Connection
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~Connection.__init__
+      ~Connection.add_class
+      ~Connection.add_traits
+      ~Connection.blur
+      ~Connection.class_own_trait_events
+      ~Connection.class_own_traits
+      ~Connection.class_trait_names
+      ~Connection.class_traits
+      ~Connection.close
+      ~Connection.close_all
+      ~Connection.connect_to_mpl
+      ~Connection.connect_to_plotly
+      ~Connection.disconnect_mpl
+      ~Connection.focus
+      ~Connection.get_manager_state
+      ~Connection.get_state
+      ~Connection.get_view_spec
+      ~Connection.handle_comm_opened
+      ~Connection.handle_control_comm_opened
+      ~Connection.has_trait
+      ~Connection.hold_sync
+      ~Connection.hold_trait_notifications
+      ~Connection.notify_change
+      ~Connection.observe
+      ~Connection.on_msg
+      ~Connection.on_trait_change
+      ~Connection.on_widget_constructed
+      ~Connection.open
+      ~Connection.recheck_position
+      ~Connection.refresh_mpl_location
+      ~Connection.remove_class
+      ~Connection.send
+      ~Connection.send_state
+      ~Connection.set_state
+      ~Connection.set_trait
+      ~Connection.setup_instance
+      ~Connection.trait_defaults
+      ~Connection.trait_events
+      ~Connection.trait_has_value
+      ~Connection.trait_metadata
+      ~Connection.trait_names
+      ~Connection.trait_values
+      ~Connection.traits
+      ~Connection.unobserve
+      ~Connection.unobserve_all
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~Connection.class_component_serialization
+      ~Connection.comm
+      ~Connection.components
+      ~Connection.conn_type_1
+      ~Connection.conn_type_2
+      ~Connection.connection_id
+      ~Connection.container_id
+      ~Connection.cross_validation_lock
+      ~Connection.css
+      ~Connection.data
+      ~Connection.data_x
+      ~Connection.data_y
+      ~Connection.events
+      ~Connection.height
+      ~Connection.keys
+      ~Connection.layout
+      ~Connection.log
+      ~Connection.methods
+      ~Connection.model_id
+      ~Connection.mpl_div_class
+      ~Connection.plotly_div_class
+      ~Connection.tabbable
+      ~Connection.template
+      ~Connection.template_file
+      ~Connection.tooltip
+      ~Connection.widget_types
+      ~Connection.widgets
+      ~Connection.width
+      ~Connection.x1
+      ~Connection.x2
+      ~Connection.y1
+      ~Connection.y2

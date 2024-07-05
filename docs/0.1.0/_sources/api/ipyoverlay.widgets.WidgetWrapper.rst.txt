@@ -1,0 +1,91 @@
+﻿ipyoverlay.widgets.WidgetWrapper
+================================
+
+.. currentmodule:: ipyoverlay.widgets
+
+.. autoclass:: WidgetWrapper
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~WidgetWrapper.__init__
+      ~WidgetWrapper.add_class
+      ~WidgetWrapper.add_traits
+      ~WidgetWrapper.blur
+      ~WidgetWrapper.class_own_trait_events
+      ~WidgetWrapper.class_own_traits
+      ~WidgetWrapper.class_trait_names
+      ~WidgetWrapper.class_traits
+      ~WidgetWrapper.close
+      ~WidgetWrapper.close_all
+      ~WidgetWrapper.focus
+      ~WidgetWrapper.get_manager_state
+      ~WidgetWrapper.get_state
+      ~WidgetWrapper.get_view_spec
+      ~WidgetWrapper.handle_comm_opened
+      ~WidgetWrapper.handle_control_comm_opened
+      ~WidgetWrapper.has_trait
+      ~WidgetWrapper.hold_sync
+      ~WidgetWrapper.hold_trait_notifications
+      ~WidgetWrapper.notify_change
+      ~WidgetWrapper.observe
+      ~WidgetWrapper.on_msg
+      ~WidgetWrapper.on_trait_change
+      ~WidgetWrapper.on_widget_constructed
+      ~WidgetWrapper.open
+      ~WidgetWrapper.overlay_container_should_handle_click
+      ~WidgetWrapper.remove_class
+      ~WidgetWrapper.send
+      ~WidgetWrapper.send_state
+      ~WidgetWrapper.set_state
+      ~WidgetWrapper.set_trait
+      ~WidgetWrapper.setup_instance
+      ~WidgetWrapper.trait_defaults
+      ~WidgetWrapper.trait_events
+      ~WidgetWrapper.trait_has_value
+      ~WidgetWrapper.trait_metadata
+      ~WidgetWrapper.trait_names
+      ~WidgetWrapper.trait_values
+      ~WidgetWrapper.traits
+      ~WidgetWrapper.unobserve
+      ~WidgetWrapper.unobserve_all
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~WidgetWrapper.background_color
+      ~WidgetWrapper.class_component_serialization
+      ~WidgetWrapper.clicked
+      ~WidgetWrapper.comm
+      ~WidgetWrapper.components
+      ~WidgetWrapper.cross_validation_lock
+      ~WidgetWrapper.css
+      ~WidgetWrapper.data
+      ~WidgetWrapper.default_border_color
+      ~WidgetWrapper.events
+      ~WidgetWrapper.hover_border_color
+      ~WidgetWrapper.keys
+      ~WidgetWrapper.layout
+      ~WidgetWrapper.log
+      ~WidgetWrapper.methods
+      ~WidgetWrapper.model_id
+      ~WidgetWrapper.tabbable
+      ~WidgetWrapper.template
+      ~WidgetWrapper.template_file
+      ~WidgetWrapper.tooltip
+      ~WidgetWrapper.widget
+      ~WidgetWrapper.widget_types
+      ~WidgetWrapper.widgets

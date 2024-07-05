@@ -1,0 +1,93 @@
+﻿ipyoverlay.widgets.PopupComponent
+=================================
+
+.. currentmodule:: ipyoverlay.widgets
+
+.. autoclass:: PopupComponent
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~PopupComponent.__init__
+      ~PopupComponent.add_class
+      ~PopupComponent.add_traits
+      ~PopupComponent.blur
+      ~PopupComponent.class_own_trait_events
+      ~PopupComponent.class_own_traits
+      ~PopupComponent.class_trait_names
+      ~PopupComponent.class_traits
+      ~PopupComponent.close
+      ~PopupComponent.close_all
+      ~PopupComponent.focus
+      ~PopupComponent.get_manager_state
+      ~PopupComponent.get_state
+      ~PopupComponent.get_view_spec
+      ~PopupComponent.handle_comm_opened
+      ~PopupComponent.handle_control_comm_opened
+      ~PopupComponent.has_trait
+      ~PopupComponent.hide
+      ~PopupComponent.hold_sync
+      ~PopupComponent.hold_trait_notifications
+      ~PopupComponent.notify_change
+      ~PopupComponent.observe
+      ~PopupComponent.on_msg
+      ~PopupComponent.on_trait_change
+      ~PopupComponent.on_widget_constructed
+      ~PopupComponent.open
+      ~PopupComponent.remove_class
+      ~PopupComponent.send
+      ~PopupComponent.send_state
+      ~PopupComponent.set_state
+      ~PopupComponent.set_trait
+      ~PopupComponent.setup_instance
+      ~PopupComponent.show
+      ~PopupComponent.trait_defaults
+      ~PopupComponent.trait_events
+      ~PopupComponent.trait_has_value
+      ~PopupComponent.trait_metadata
+      ~PopupComponent.trait_names
+      ~PopupComponent.trait_values
+      ~PopupComponent.traits
+      ~PopupComponent.unobserve
+      ~PopupComponent.unobserve_all
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~PopupComponent.class_component_serialization
+      ~PopupComponent.comm
+      ~PopupComponent.components
+      ~PopupComponent.cross_validation_lock
+      ~PopupComponent.css
+      ~PopupComponent.data
+      ~PopupComponent.events
+      ~PopupComponent.height
+      ~PopupComponent.is_open
+      ~PopupComponent.keys
+      ~PopupComponent.layout
+      ~PopupComponent.left
+      ~PopupComponent.log
+      ~PopupComponent.methods
+      ~PopupComponent.model_id
+      ~PopupComponent.tabbable
+      ~PopupComponent.template
+      ~PopupComponent.template_file
+      ~PopupComponent.tooltip
+      ~PopupComponent.top
+      ~PopupComponent.widget
+      ~PopupComponent.widget_types
+      ~PopupComponent.widgets
+      ~PopupComponent.width

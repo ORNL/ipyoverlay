@@ -1,0 +1,30 @@
+ipyoverlay.mpl.event
+====================
+
+.. automodule:: ipyoverlay.mpl.event
+
+
+
+
+
+
+
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+
+      on_mpl_point_click
+
+
+
+
+
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+
+      MPLArtistEventHandler
+      MPLEventHandler

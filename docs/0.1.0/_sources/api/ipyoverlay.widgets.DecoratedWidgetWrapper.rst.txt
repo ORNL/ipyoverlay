@@ -1,0 +1,109 @@
+﻿ipyoverlay.widgets.DecoratedWidgetWrapper
+=========================================
+
+.. currentmodule:: ipyoverlay.widgets
+
+.. autoclass:: DecoratedWidgetWrapper
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~DecoratedWidgetWrapper.__init__
+      ~DecoratedWidgetWrapper.add_class
+      ~DecoratedWidgetWrapper.add_traits
+      ~DecoratedWidgetWrapper.blur
+      ~DecoratedWidgetWrapper.class_own_trait_events
+      ~DecoratedWidgetWrapper.class_own_traits
+      ~DecoratedWidgetWrapper.class_trait_names
+      ~DecoratedWidgetWrapper.class_traits
+      ~DecoratedWidgetWrapper.close
+      ~DecoratedWidgetWrapper.close_all
+      ~DecoratedWidgetWrapper.fire_on_closed
+      ~DecoratedWidgetWrapper.focus
+      ~DecoratedWidgetWrapper.get_manager_state
+      ~DecoratedWidgetWrapper.get_state
+      ~DecoratedWidgetWrapper.get_view_spec
+      ~DecoratedWidgetWrapper.handle_comm_opened
+      ~DecoratedWidgetWrapper.handle_control_comm_opened
+      ~DecoratedWidgetWrapper.has_trait
+      ~DecoratedWidgetWrapper.hold_sync
+      ~DecoratedWidgetWrapper.hold_trait_notifications
+      ~DecoratedWidgetWrapper.notify_change
+      ~DecoratedWidgetWrapper.observe
+      ~DecoratedWidgetWrapper.on_closed
+      ~DecoratedWidgetWrapper.on_msg
+      ~DecoratedWidgetWrapper.on_trait_change
+      ~DecoratedWidgetWrapper.on_widget_constructed
+      ~DecoratedWidgetWrapper.open
+      ~DecoratedWidgetWrapper.overlay_container_should_handle_click
+      ~DecoratedWidgetWrapper.recheck_position
+      ~DecoratedWidgetWrapper.remove_class
+      ~DecoratedWidgetWrapper.send
+      ~DecoratedWidgetWrapper.send_state
+      ~DecoratedWidgetWrapper.set_state
+      ~DecoratedWidgetWrapper.set_trait
+      ~DecoratedWidgetWrapper.setup_instance
+      ~DecoratedWidgetWrapper.trait_defaults
+      ~DecoratedWidgetWrapper.trait_events
+      ~DecoratedWidgetWrapper.trait_has_value
+      ~DecoratedWidgetWrapper.trait_metadata
+      ~DecoratedWidgetWrapper.trait_names
+      ~DecoratedWidgetWrapper.trait_values
+      ~DecoratedWidgetWrapper.traits
+      ~DecoratedWidgetWrapper.unobserve
+      ~DecoratedWidgetWrapper.unobserve_all
+      ~DecoratedWidgetWrapper.vue_handle_header_close_clicked
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~DecoratedWidgetWrapper.active
+      ~DecoratedWidgetWrapper.active_header_color
+      ~DecoratedWidgetWrapper.background_color
+      ~DecoratedWidgetWrapper.class_component_serialization
+      ~DecoratedWidgetWrapper.clicked
+      ~DecoratedWidgetWrapper.closable
+      ~DecoratedWidgetWrapper.comm
+      ~DecoratedWidgetWrapper.components
+      ~DecoratedWidgetWrapper.cross_validation_lock
+      ~DecoratedWidgetWrapper.css
+      ~DecoratedWidgetWrapper.current_height
+      ~DecoratedWidgetWrapper.current_width
+      ~DecoratedWidgetWrapper.current_x
+      ~DecoratedWidgetWrapper.current_y
+      ~DecoratedWidgetWrapper.data
+      ~DecoratedWidgetWrapper.decoration_height
+      ~DecoratedWidgetWrapper.default_border_color
+      ~DecoratedWidgetWrapper.default_header_color
+      ~DecoratedWidgetWrapper.events
+      ~DecoratedWidgetWrapper.height
+      ~DecoratedWidgetWrapper.hover_border_color
+      ~DecoratedWidgetWrapper.keys
+      ~DecoratedWidgetWrapper.layout
+      ~DecoratedWidgetWrapper.log
+      ~DecoratedWidgetWrapper.methods
+      ~DecoratedWidgetWrapper.model_id
+      ~DecoratedWidgetWrapper.tabbable
+      ~DecoratedWidgetWrapper.template
+      ~DecoratedWidgetWrapper.template_file
+      ~DecoratedWidgetWrapper.title
+      ~DecoratedWidgetWrapper.tooltip
+      ~DecoratedWidgetWrapper.widget
+      ~DecoratedWidgetWrapper.widget_types
+      ~DecoratedWidgetWrapper.widgets
+      ~DecoratedWidgetWrapper.width
+      ~DecoratedWidgetWrapper.wrapper_id
+      ~DecoratedWidgetWrapper.z_index

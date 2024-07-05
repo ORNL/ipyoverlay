@@ -1,0 +1,116 @@
+﻿ipyoverlay.container.OverlayContainer
+=====================================
+
+.. currentmodule:: ipyoverlay.container
+
+.. autoclass:: OverlayContainer
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~OverlayContainer.__init__
+      ~OverlayContainer.add_child
+      ~OverlayContainer.add_class
+      ~OverlayContainer.add_traits
+      ~OverlayContainer.blur
+      ~OverlayContainer.class_own_trait_events
+      ~OverlayContainer.class_own_traits
+      ~OverlayContainer.class_trait_names
+      ~OverlayContainer.class_traits
+      ~OverlayContainer.close
+      ~OverlayContainer.close_all
+      ~OverlayContainer.connect_child_to_mpl
+      ~OverlayContainer.connect_child_to_pixel
+      ~OverlayContainer.connect_child_to_plotly
+      ~OverlayContainer.fire_on_rendered
+      ~OverlayContainer.fire_on_resized
+      ~OverlayContainer.focus
+      ~OverlayContainer.get_current_width_height
+      ~OverlayContainer.get_manager_state
+      ~OverlayContainer.get_relative_layout_position
+      ~OverlayContainer.get_state
+      ~OverlayContainer.get_view_spec
+      ~OverlayContainer.handle_comm_opened
+      ~OverlayContainer.handle_control_comm_opened
+      ~OverlayContainer.has_trait
+      ~OverlayContainer.hold_sync
+      ~OverlayContainer.hold_trait_notifications
+      ~OverlayContainer.move_child
+      ~OverlayContainer.move_child_client_px
+      ~OverlayContainer.notify_change
+      ~OverlayContainer.observe
+      ~OverlayContainer.on_msg
+      ~OverlayContainer.on_rendered
+      ~OverlayContainer.on_resized
+      ~OverlayContainer.on_trait_change
+      ~OverlayContainer.on_widget_constructed
+      ~OverlayContainer.open
+      ~OverlayContainer.remove_child
+      ~OverlayContainer.remove_class
+      ~OverlayContainer.send
+      ~OverlayContainer.send_state
+      ~OverlayContainer.set_state
+      ~OverlayContainer.set_trait
+      ~OverlayContainer.setup_instance
+      ~OverlayContainer.trait_defaults
+      ~OverlayContainer.trait_events
+      ~OverlayContainer.trait_has_value
+      ~OverlayContainer.trait_metadata
+      ~OverlayContainer.trait_names
+      ~OverlayContainer.trait_values
+      ~OverlayContainer.traits
+      ~OverlayContainer.unobserve
+      ~OverlayContainer.unobserve_all
+      ~OverlayContainer.vue_handle_child_mouse_down
+      ~OverlayContainer.vue_handle_mouse_down
+      ~OverlayContainer.vue_handle_mouse_up
+      ~OverlayContainer.vue_handle_rendered
+      ~OverlayContainer.vue_handle_resize
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~OverlayContainer.child_connections_info
+      ~OverlayContainer.children
+      ~OverlayContainer.class_component_serialization
+      ~OverlayContainer.comm
+      ~OverlayContainer.components
+      ~OverlayContainer.container_id
+      ~OverlayContainer.cross_validation_lock
+      ~OverlayContainer.css
+      ~OverlayContainer.current_height
+      ~OverlayContainer.current_width
+      ~OverlayContainer.data
+      ~OverlayContainer.detail_connections
+      ~OverlayContainer.dragging
+      ~OverlayContainer.dragging_index
+      ~OverlayContainer.events
+      ~OverlayContainer.expandable
+      ~OverlayContainer.expanded
+      ~OverlayContainer.height
+      ~OverlayContainer.keys
+      ~OverlayContainer.layout
+      ~OverlayContainer.log
+      ~OverlayContainer.methods
+      ~OverlayContainer.model_id
+      ~OverlayContainer.tabbable
+      ~OverlayContainer.template
+      ~OverlayContainer.template_file
+      ~OverlayContainer.tooltip
+      ~OverlayContainer.widget
+      ~OverlayContainer.widget_types
+      ~OverlayContainer.widgets
+      ~OverlayContainer.width

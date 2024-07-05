@@ -1,0 +1,19 @@
+﻿ipyoverlay.utils
+================
+
+.. automodule:: ipyoverlay.utils
+
+
+
+
+
+
+
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+
+      convert_mpl_data_to_pixel
+      convert_pixel_to_mpl_data
+      vue_template_path

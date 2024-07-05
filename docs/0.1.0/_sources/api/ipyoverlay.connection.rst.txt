@@ -1,0 +1,22 @@
+﻿ipyoverlay.connection
+=====================
+
+.. automodule:: ipyoverlay.connection
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+
+      Connection

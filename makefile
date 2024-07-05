@@ -16,15 +16,15 @@ publish: ## build the package and push to pypi
 	@twine check dist/*
 	@twine upload dist/* --skip-existing
 
-# .PHONY: apply-docs
-# apply-docs:
-# 	@rm -rf docs/latest
-# 	@echo "Copying documentation to 'docs/latest'..."
-# 	@cp -r sphinx/build/html docs/latest
-# 	@echo "Copying documentation to docs/$(VERSION)"
-# 	@rm -f docs/$(VERSION)
-# 	@cp -r sphinx/build/html docs/$(VERSION)
-#
+.PHONY: apply-docs
+apply-docs: ## copy current built sphinx documentation into version-specific docs/folder
+	-@unlink docs/stable
+	@echo "Copying documentation to docs/$(VERSION)"
+	-@rm -rf docs/$(VERSION)
+	@cp -r sphinx/build/html docs/$(VERSION)
+	@echo "Linking to docs/stable"
+	@ln -s $(VERSION)/ docs/stable
+
 .PHONY: style
 style: ## run autofixers and linters
 	black .

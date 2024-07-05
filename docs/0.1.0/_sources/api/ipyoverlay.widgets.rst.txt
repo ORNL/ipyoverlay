@@ -1,0 +1,26 @@
+﻿ipyoverlay.widgets
+==================
+
+.. automodule:: ipyoverlay.widgets
+
+
+
+
+
+
+
+
+
+
+
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+
+      ContextMenu
+      ContextMenuArea
+      DecoratedWidgetWrapper
+      PopupComponent
+      WidgetWrapper

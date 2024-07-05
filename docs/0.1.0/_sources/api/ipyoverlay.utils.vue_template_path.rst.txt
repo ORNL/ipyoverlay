@@ -1,0 +1,6 @@
+ipyoverlay.utils.vue\_template\_path
+====================================
+
+.. currentmodule:: ipyoverlay.utils
+
+.. autofunction:: vue_template_path

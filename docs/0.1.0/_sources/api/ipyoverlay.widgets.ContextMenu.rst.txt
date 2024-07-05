@@ -1,0 +1,96 @@
+﻿ipyoverlay.widgets.ContextMenu
+==============================
+
+.. currentmodule:: ipyoverlay.widgets
+
+.. autoclass:: ContextMenu
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~ContextMenu.__init__
+      ~ContextMenu.add_class
+      ~ContextMenu.add_traits
+      ~ContextMenu.blur
+      ~ContextMenu.class_own_trait_events
+      ~ContextMenu.class_own_traits
+      ~ContextMenu.class_trait_names
+      ~ContextMenu.class_traits
+      ~ContextMenu.close
+      ~ContextMenu.close_all
+      ~ContextMenu.fire_on_option_clicked
+      ~ContextMenu.focus
+      ~ContextMenu.get_manager_state
+      ~ContextMenu.get_state
+      ~ContextMenu.get_view_spec
+      ~ContextMenu.handle_comm_opened
+      ~ContextMenu.handle_control_comm_opened
+      ~ContextMenu.has_trait
+      ~ContextMenu.hold_sync
+      ~ContextMenu.hold_trait_notifications
+      ~ContextMenu.notify_change
+      ~ContextMenu.observe
+      ~ContextMenu.on_msg
+      ~ContextMenu.on_option_clicked
+      ~ContextMenu.on_trait_change
+      ~ContextMenu.on_widget_constructed
+      ~ContextMenu.open
+      ~ContextMenu.overlay_container_should_handle_click
+      ~ContextMenu.remove_class
+      ~ContextMenu.send
+      ~ContextMenu.send_state
+      ~ContextMenu.set_options
+      ~ContextMenu.set_state
+      ~ContextMenu.set_trait
+      ~ContextMenu.setup_instance
+      ~ContextMenu.trait_defaults
+      ~ContextMenu.trait_events
+      ~ContextMenu.trait_has_value
+      ~ContextMenu.trait_metadata
+      ~ContextMenu.trait_names
+      ~ContextMenu.trait_values
+      ~ContextMenu.traits
+      ~ContextMenu.unobserve
+      ~ContextMenu.unobserve_all
+      ~ContextMenu.vue_handle_option_clicked
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~ContextMenu.background_color
+      ~ContextMenu.class_component_serialization
+      ~ContextMenu.comm
+      ~ContextMenu.components
+      ~ContextMenu.cross_validation_lock
+      ~ContextMenu.css
+      ~ContextMenu.data
+      ~ContextMenu.events
+      ~ContextMenu.hover_color
+      ~ContextMenu.keys
+      ~ContextMenu.layout
+      ~ContextMenu.log
+      ~ContextMenu.menu_id
+      ~ContextMenu.methods
+      ~ContextMenu.model_id
+      ~ContextMenu.options
+      ~ContextMenu.tabbable
+      ~ContextMenu.template
+      ~ContextMenu.template_file
+      ~ContextMenu.tooltip
+      ~ContextMenu.visible
+      ~ContextMenu.widget_types
+      ~ContextMenu.widgets
+      ~ContextMenu.width
