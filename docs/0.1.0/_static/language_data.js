@@ -21,37 +21,37 @@ var stopwords = ["a", "and", "are", "as", "at", "be", "but", "by", "for", "if", 
 var Stemmer = function() {
 
   var step2list = {
-    ational: "ate",
-    tional: "tion",
-    enci: "ence",
-    anci: "ance",
-    izer: "ize",
-    bli: "ble",
-    alli: "al",
-    entli: "ent",
-    eli: "e",
-    ousli: "ous",
-    ization: "ize",
-    ation: "ate",
-    ator: "ate",
-    alism: "al",
-    iveness: "ive",
-    fulness: "ful",
-    ousness: "ous",
-    aliti: "al",
-    iviti: "ive",
-    biliti: "ble",
-    logi: "log"
+    ational: 'ate',
+    tional: 'tion',
+    enci: 'ence',
+    anci: 'ance',
+    izer: 'ize',
+    bli: 'ble',
+    alli: 'al',
+    entli: 'ent',
+    eli: 'e',
+    ousli: 'ous',
+    ization: 'ize',
+    ation: 'ate',
+    ator: 'ate',
+    alism: 'al',
+    iveness: 'ive',
+    fulness: 'ful',
+    ousness: 'ous',
+    aliti: 'al',
+    iviti: 'ive',
+    biliti: 'ble',
+    logi: 'log'
   };
 
   var step3list = {
-    icate: "ic",
-    ative: "",
-    alize: "al",
-    iciti: "ic",
-    ical: "ic",
-    ful: "",
-    ness: ""
+    icate: 'ic',
+    ative: '',
+    alize: 'al',
+    iciti: 'ic',
+    ical: 'ic',
+    ful: '',
+    ness: ''
   };
 
   var c = "[^aeiou]";          // consonant
@@ -78,7 +78,7 @@ var Stemmer = function() {
     var re3;
     var re4;
 
-    firstch = w.substr(0, 1);
+    firstch = w.substr(0,1);
     if (firstch == "y")
       w = firstch.toUpperCase() + w.substr(1);
 
@@ -87,9 +87,9 @@ var Stemmer = function() {
     re2 = /^(.+?)([^s])s$/;
 
     if (re.test(w))
-      w = w.replace(re, "$1$2");
+      w = w.replace(re,"$1$2");
     else if (re2.test(w))
-      w = w.replace(re2, "$1$2");
+      w = w.replace(re2,"$1$2");
 
     // Step 1b
     re = /^(.+?)eed$/;
@@ -99,7 +99,7 @@ var Stemmer = function() {
       re = new RegExp(mgr0);
       if (re.test(fp[1])) {
         re = /.$/;
-        w = w.replace(re, "");
+        w = w.replace(re,"");
       }
     }
     else if (re2.test(w)) {
@@ -115,7 +115,7 @@ var Stemmer = function() {
           w = w + "e";
         else if (re3.test(w)) {
           re = /.$/;
-          w = w.replace(re, "");
+          w = w.replace(re,"");
         }
         else if (re4.test(w))
           w = w + "e";
@@ -187,12 +187,12 @@ var Stemmer = function() {
     re2 = new RegExp(mgr1);
     if (re.test(w) && re2.test(w)) {
       re = /.$/;
-      w = w.replace(re, "");
+      w = w.replace(re,"");
     }
 
     // and turn initial Y back to y
     if (firstch == "y")
       w = firstch.toLowerCase() + w.substr(1);
     return w;
-  };
-};
+  }
+}

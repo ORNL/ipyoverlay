@@ -1,15 +1,11 @@
 /* Highlighting utilities for Sphinx HTML documentation. */
 "use strict";
 
-const SPHINX_HIGHLIGHT_ENABLED = true;
+const SPHINX_HIGHLIGHT_ENABLED = true
 
 /**
  * highlight a given string on a node by wrapping it in
  * span elements with the given class name.
- * @param node
- * @param addItems
- * @param text
- * @param className
  */
 const _highlight = (node, addItems, text, className) => {
   if (node.nodeType === Node.TEXT_NODE) {
@@ -27,8 +23,7 @@ const _highlight = (node, addItems, text, className) => {
       const isInSVG = closestNode && closestNode.matches("svg");
       if (isInSVG) {
         span = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
-      }
-      else {
+      } else {
         span = document.createElement("span");
         span.classList.add(className);
       }
@@ -57,8 +52,7 @@ const _highlight = (node, addItems, text, className) => {
         addItems.push({ parent: parent, target: rect });
       }
     }
-  }
-  else if (node.matches && !node.matches("button, select, textarea")) {
+  } else if (node.matches && !node.matches("button, select, textarea")) {
     node.childNodes.forEach((el) => _highlight(el, addItems, text, className));
   }
 };
@@ -87,7 +81,7 @@ const SphinxHighlight = {
         localStorage.getItem("sphinx_highlight_terms")
         || url.searchParams.get("highlight")
         || "";
-    localStorage.removeItem("sphinx_highlight_terms");
+    localStorage.removeItem("sphinx_highlight_terms")
     url.searchParams.delete("highlight");
     window.history.replaceState({}, "", url);
 
@@ -108,8 +102,8 @@ const SphinxHighlight = {
       document
         .createRange()
         .createContextualFragment(
-          "<p class=\"highlight-link\">" +
-            "<a href=\"javascript:SphinxHighlight.hideSearchWords()\">" +
+          '<p class="highlight-link">' +
+            '<a href="javascript:SphinxHighlight.hideSearchWords()">' +
             _("Hide Search Matches") +
             "</a></p>"
         )
@@ -126,7 +120,7 @@ const SphinxHighlight = {
     document
       .querySelectorAll("span.highlighted")
       .forEach((el) => el.classList.remove("highlighted"));
-    localStorage.removeItem("sphinx_highlight_terms");
+    localStorage.removeItem("sphinx_highlight_terms")
   },
 
   initEscapeListener: () => {

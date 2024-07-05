@@ -20,8 +20,7 @@ const BLACKLISTED_KEY_CONTROL_ELEMENTS = new Set([
 const _ready = (callback) => {
   if (document.readyState !== "loading") {
     callback();
-  }
-  else {
+  } else {
     document.addEventListener("DOMContentLoaded", callback);
   }
 };
@@ -47,12 +46,12 @@ const Documentation = {
   gettext: (string) => {
     const translated = Documentation.TRANSLATIONS[string];
     switch (typeof translated) {
-    case "undefined":
-      return string; // no translation
-    case "string":
-      return translated; // translation exists
-    default:
-      return translated[0]; // (singular, plural) translation tuple exists
+      case "undefined":
+        return string; // no translation
+      case "string":
+        return translated; // translation exists
+      default:
+        return translated[0]; // (singular, plural) translation tuple exists
     }
   },
 
@@ -89,8 +88,7 @@ const Documentation = {
       if (el.src.substr(-9) === "minus.png") {
         el.src = `${el.src.substr(0, el.src.length - 9)}plus.png`;
         toggledRows.forEach((el) => (el.style.display = "none"));
-      }
-      else {
+      } else {
         el.src = `${el.src.substr(0, el.src.length - 8)}minus.png`;
         toggledRows.forEach((el) => (el.style.display = ""));
       }
@@ -120,33 +118,33 @@ const Documentation = {
 
       if (!event.shiftKey) {
         switch (event.key) {
-        case "ArrowLeft":
-          if (!DOCUMENTATION_OPTIONS.NAVIGATION_WITH_KEYS) break;
+          case "ArrowLeft":
+            if (!DOCUMENTATION_OPTIONS.NAVIGATION_WITH_KEYS) break;
 
-          const prevLink = document.querySelector("link[rel=\"prev\"]");
-          if (prevLink && prevLink.href) {
-            window.location.href = prevLink.href;
-            event.preventDefault();
-          }
-          break;
-        case "ArrowRight":
-          if (!DOCUMENTATION_OPTIONS.NAVIGATION_WITH_KEYS) break;
+            const prevLink = document.querySelector('link[rel="prev"]');
+            if (prevLink && prevLink.href) {
+              window.location.href = prevLink.href;
+              event.preventDefault();
+            }
+            break;
+          case "ArrowRight":
+            if (!DOCUMENTATION_OPTIONS.NAVIGATION_WITH_KEYS) break;
 
-          const nextLink = document.querySelector("link[rel=\"next\"]");
-          if (nextLink && nextLink.href) {
-            window.location.href = nextLink.href;
-            event.preventDefault();
-          }
-          break;
+            const nextLink = document.querySelector('link[rel="next"]');
+            if (nextLink && nextLink.href) {
+              window.location.href = nextLink.href;
+              event.preventDefault();
+            }
+            break;
         }
       }
 
       // some keyboard layouts may need Shift to get /
       switch (event.key) {
-      case "/":
-        if (!DOCUMENTATION_OPTIONS.ENABLE_SEARCH_SHORTCUTS) break;
-        Documentation.focusSearchBar();
-        event.preventDefault();
+        case "/":
+          if (!DOCUMENTATION_OPTIONS.ENABLE_SEARCH_SHORTCUTS) break;
+          Documentation.focusSearchBar();
+          event.preventDefault();
       }
     });
   },

@@ -53,7 +53,6 @@ const _removeChildren = (element) => {
 
 /**
  * See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#escaping
- * @param string
  */
 const _escapeRegExp = (string) =>
   string.replace(/[.*+\-?^${}()|[\]\\]/g, "\\$&"); // $& means the whole matched string
@@ -78,8 +77,7 @@ const _displayItem = (item, searchTerms) => {
     else if (dirname === "index/") dirname = "";
     requestUrl = docUrlRoot + dirname;
     linkUrl = requestUrl;
-  }
-  else {
+  } else {
     // normal html builders
     requestUrl = docUrlRoot + docName + docFileSuffix;
     linkUrl = docName + docLinkSuffix;
@@ -142,8 +140,8 @@ const _displayNextItem = (
  */
 if (typeof splitQuery === "undefined") {
   var splitQuery = (query) => query
-    .split(/[^\p{Letter}\p{Number}_\p{Emoji_Presentation}]+/gu)
-    .filter(term => term);  // remove remaining empty strings
+      .split(/[^\p{Letter}\p{Number}_\p{Emoji_Presentation}]+/gu)
+      .filter(term => term)  // remove remaining empty strings
 }
 
 /**
@@ -155,9 +153,9 @@ const Search = {
   _pulse_status: -1,
 
   htmlToText: (htmlString) => {
-    const htmlElement = new DOMParser().parseFromString(htmlString, "text/html");
-    htmlElement.querySelectorAll(".headerlink").forEach((el) => { el.remove(); });
-    const docContent = htmlElement.querySelector("[role=\"main\"]");
+    const htmlElement = new DOMParser().parseFromString(htmlString, 'text/html');
+    htmlElement.querySelectorAll(".headerlink").forEach((el) => { el.remove() });
+    const docContent = htmlElement.querySelector('[role="main"]');
     if (docContent !== undefined) return docContent.textContent;
     console.warn(
       "Content block not found. Sphinx search tries to obtain it via '[role=main]'. Could you check your theme or template."
@@ -168,7 +166,7 @@ const Search = {
   init: () => {
     const query = new URLSearchParams(window.location.search).get("q");
     document
-      .querySelectorAll("input[name=\"q\"]")
+      .querySelectorAll('input[name="q"]')
       .forEach((el) => (el.value = query));
     if (query) Search.performSearch(query);
   },
@@ -204,7 +202,6 @@ const Search = {
 
   /**
    * perform a search for something (or wait until index is loaded)
-   * @param query
    */
   performSearch: (query) => {
     // create the required interface elements
@@ -236,7 +233,6 @@ const Search = {
 
   /**
    * execute search (requires search index to be loaded)
-   * @param query
    */
   query: (query) => {
     const filenames = Search._index.filenames;
@@ -273,7 +269,7 @@ const Search = {
     });
 
     if (SPHINX_HIGHLIGHT_ENABLED) {  // set in sphinx_highlight.js
-      localStorage.setItem("sphinx_highlight_terms", [...highlightTerms].join(" "));
+      localStorage.setItem("sphinx_highlight_terms", [...highlightTerms].join(" "))
     }
 
     // console.debug("SEARCH: searching for:");
@@ -288,7 +284,7 @@ const Search = {
     for (const [title, foundTitles] of Object.entries(allTitles)) {
       if (title.toLowerCase().includes(queryLower) && (queryLower.length >= title.length/2)) {
         for (const [file, id] of foundTitles) {
-          let score = Math.round(100 * queryLower.length / title.length);
+          let score = Math.round(100 * queryLower.length / title.length)
           results.push([
             docNames[file],
             titles[file] !== title ? `${titles[file]} > ${title}` : title,
@@ -305,7 +301,7 @@ const Search = {
     for (const [entry, foundEntries] of Object.entries(indexEntries)) {
       if (entry.includes(queryLower) && (queryLower.length >= entry.length/2)) {
         for (const [file, id] of foundEntries) {
-          let score = Math.round(100 * queryLower.length / entry.length);
+          let score = Math.round(100 * queryLower.length / entry.length)
           results.push([
             docNames[file],
             titles[file],
@@ -349,7 +345,7 @@ const Search = {
     // note the reversing of results, so that in the case of duplicates, the highest-scoring entry is kept
     let seen = new Set();
     results = results.reverse().reduce((acc, result) => {
-      let resultStr = result.slice(0, 4).concat([result[5]]).map(v => String(v)).join(",");
+      let resultStr = result.slice(0, 4).concat([result[5]]).map(v => String(v)).join(',');
       if (!seen.has(resultStr)) {
         acc.push(result);
         seen.add(resultStr);
@@ -369,8 +365,6 @@ const Search = {
 
   /**
    * search for object names
-   * @param object
-   * @param objectTerms
    */
   performObjectSearch: (object, objectTerms) => {
     const filenames = Search._index.filenames;
@@ -382,7 +376,7 @@ const Search = {
     const results = [];
 
     const objectSearchCallback = (prefix, match) => {
-      const name = match[4];
+      const name = match[4]
       const fullname = (prefix ? prefix + "." : "") + name;
       const fullnameLower = fullname.toLowerCase();
       if (fullnameLower.indexOf(object) < 0) return;
@@ -442,8 +436,6 @@ const Search = {
 
   /**
    * search for full-text terms in the index
-   * @param searchTerms
-   * @param excludedTerms
    */
   performTermsSearch: (searchTerms, excludedTerms) => {
     // prepare search
@@ -548,8 +540,6 @@ const Search = {
    * helper function to return a node containing the
    * search summary for a given text. keywords is a list
    * of stemmed words.
-   * @param htmlText
-   * @param keywords
    */
   makeSearchSummary: (htmlText, keywords) => {
     const text = Search.htmlToText(htmlText);
