@@ -25,7 +25,7 @@ pip install ipyoverlay
 
 ## Documentation
 
-WIP
+User guide and API documentation can be found at [https://ornl.github.io/ipyoverlay](https://ornl.github.io/ipyoverlay/stable)
 
 ## Screenshots
 
