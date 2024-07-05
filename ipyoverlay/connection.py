@@ -2,7 +2,6 @@
 that is a line connecting some floating overlay to some source component or
 positon."""
 
-import importlib.resources
 import uuid
 
 import ipyvuetify as v
@@ -13,7 +12,7 @@ from matplotlib.axes import Axes
 # TODO: conditional import
 from plotly.graph_objects import FigureWidget
 
-from .utils import convert_mpl_data_to_pixel
+from .utils import convert_mpl_data_to_pixel, vue_template_path
 
 # from enum import IntEnum
 
@@ -29,12 +28,7 @@ class Connection(v.VuetifyTemplate):
     """SVG connection line, can be used to help track what an overlaid widget
     is referring to in an underlying component."""
 
-    # template_file = "viz/overlay/connection.vue"
-
-    with importlib.resources.as_file(
-        importlib.resources.files("ipyoverlay") / "vue/connection.vue"
-    ) as template_file_path:
-        template_file = str(template_file_path)
+    template_file = vue_template_path("connection.vue")
 
     # NOTE: width and height need to be the same as the container, otherwise if
     # one point of a line gets moved out of the initial default size of the SVG

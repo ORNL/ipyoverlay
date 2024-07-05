@@ -5,3 +5,7 @@ dist/*
 
 node_modules/*
 package-lock.json
+
+# Sphinx documentation
+sphinx/build/*
+sphinx/source/api/*

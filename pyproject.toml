@@ -16,3 +16,6 @@ profile = "black"
 # R0902: too-many-instance-attributes (vuetify widgets use attributes to comm to js, this is required)
 # R0913: too-many-arguments (look, parameterization has to occur _somewhere_.)
 disable = ["W0613", "W0511", "R1735", "C0103", "E1120", "I1101", "R0903", "W0612", "R0914", "R0901", "R0902", "W0223", "R0913"]
+
+[tool.pylint.MASTER]
+ignore-paths = "^sphinx/.*$"

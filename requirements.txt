@@ -10,3 +10,6 @@ pre-commit
 pylint
 build
 twine
+sphinx~=7.1.2
+pydata-sphinx-theme
+sphinx-favicon
