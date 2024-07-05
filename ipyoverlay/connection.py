@@ -34,14 +34,26 @@ class Connection(v.VuetifyTemplate):
     # one point of a line gets moved out of the initial default size of the SVG
     # it'll be invisible.
     width = traitlets.Integer(500).tag(sync=True)
+    """Width of the SVG container to draw this connection within. Should match
+    OverlayContainer width."""
     height = traitlets.Integer(500).tag(sync=True)
+    """Height of the SVG container to draw this connection within. Should match
+    OverlayContainer height."""
 
     # NOTE: these are currently one direction - they set the actual values but
     # do not reflect the correct current ones.
     x1 = traitlets.Float(-1).tag(sync=True)
+    """X coordinate of first endpoint. This attribute is only used to send a
+    value to the JS side, it won't necessarily reflect the current value."""
     y1 = traitlets.Float(-1).tag(sync=True)
+    """Y coordinate of first endpoint. This attribute is only used to send a
+    value to the JS side, it won't necessarily reflect the current value."""
     x2 = traitlets.Float(-1).tag(sync=True)
+    """X coordinate of second endpoint. This attribute is only used to send a
+    value to the JS side, it won't necessarily reflect the current value."""
     y2 = traitlets.Float(-1).tag(sync=True)
+    """Y coordinate of second endpoint. This attribute is only used to send a
+    value to the JS side, it won't necessarily reflect the current value."""
 
     conn_type_1 = traitlets.Int(0).tag(
         sync=True
