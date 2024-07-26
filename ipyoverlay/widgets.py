@@ -389,3 +389,5 @@ class DecoratedWidgetWrapper(v.VuetifyTemplate):
         val_to_return = self.clicked
         self.clicked = False
         return val_to_return
+
+

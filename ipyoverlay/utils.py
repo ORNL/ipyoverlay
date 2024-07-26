@@ -3,7 +3,16 @@ for the various viz libraries."""
 
 import importlib.resources
 
+import ipywidgets as ipw
 from matplotlib.axes import Axes
+
+from IPython.display import display
+
+def figure_output(figure):
+    out = ipw.Output()
+    with out:
+        display(figure)
+    return out
 
 
 def vue_template_path(filename: str) -> str:

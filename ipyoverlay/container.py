@@ -14,7 +14,7 @@ from matplotlib.axes import Axes
 from plotly.graph_objects import FigureWidget
 
 from .connection import Connection
-from .utils import vue_template_path
+from .utils import vue_template_path, convert_mpl_data_to_pixel
 from .widgets import DecoratedWidgetWrapper
 
 
@@ -220,6 +220,11 @@ class OverlayContainer(v.VuetifyTemplate):
     # ============================================================
     # PUBLIC FUNCTIONS
     # ============================================================
+
+    def add_child_at_mpl_point(self, obj: ipw.Widget, axis, data_x, data_y):
+        px_x, px_y = convert_mpl_data_to_pixel(axis, data_x, data_y)
+        self.add_child(obj, px_x + 10, px_y + 10)
+        self.connect_child_to_mpl(obj, axis, data_x, data_y)
 
     def add_child(self, obj: ipw.Widget, left: int = 0, top: int = 0):
         """Add the passed widget as an overlay at the specified position.
