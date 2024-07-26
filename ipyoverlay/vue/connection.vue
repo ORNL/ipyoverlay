@@ -89,7 +89,10 @@ module.exports = {
     },
     jupyter_convertMPLRelativePxToPx(x, y) {
       console.log("Converting relative px to actual px for " + this.connection_id.toString());
-      let div = this.mplDivs[0];
+      //let div = this.mplDivs[0];
+      // see point in storeMPLDivReference for why above doesn't work
+      let query_str = "#" + this.container_id + " ." + this.mpl_div_class;
+      let div = document.querySelector(query_str);
       // I can't just use this div because it also includes e.g. the ipympl
       // header if it exists, so I have to use the rect of the actual canvas
       // object.
@@ -250,6 +253,12 @@ module.exports = {
       this.currentY2 = pixelY;
     },
     storeMPLDivReference(className) {
+      // partially because of issue #1, if the ipympl plot is rendered anytime
+      // in a cell before the container is/ipympl plot rendered again, this
+      // first div is pointing to the wrong one. Eventually may want to consider
+      // getting rid of this alltogether, since we have the classname and
+      // container id available anyway and can query live. (NOTE: this doesn't
+      // solve if the container is rendered more than once)
       this.mplDivs = document.getElementsByClassName(className);
     },
   },

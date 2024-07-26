@@ -66,7 +66,9 @@ class OverlayContainer(v.VuetifyTemplate):
     def __init__(self, widget=None, **kwargs):
         super().__init__(**kwargs)
 
-        self.container_id = str(uuid.uuid4())
+        # we add 'c' to the beginning to ensure id starts with letter, required
+        # for html4 https://stackoverflow.com/questions/34777481/failed-to-execute-query-selector-on-document-id-is-not-a-valid-selector
+        self.container_id = "c" + str(uuid.uuid4())
 
         self._resized_callbacks: list[Callable[[int, int]], None] = []
         self._rendered_callbacks: list[Callable] = []
@@ -302,7 +304,14 @@ class OverlayContainer(v.VuetifyTemplate):
 
     def connect_child_to_mpl(self, child, axis: Axes, data_x: float, data_y: float):
         """Make a connection that moves around with a draggable child and a point
-        in a matplotlib axis."""
+        in a matplotlib axis.
+
+        Args:
+            child: The widget to draw a connection line from.
+            axis (Axes): The matplotlib axis object containing the data location to connect to.
+            data_x (float): The x-value within the axis to show the connection endpoint.
+            data_y (float): The y-value within the axis to show the connection endpoint.
+        """
         c = self._initial_connection_setup(child)
 
         c.connect_to_mpl(2, axis, data_x, data_y)
