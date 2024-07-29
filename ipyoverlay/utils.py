@@ -8,10 +8,25 @@ from matplotlib.axes import Axes
 
 from IPython.display import display
 
-def figure_output(figure):
+def display_output(obj):
+    """Render the passed object via ``display()`` in a new ipywidgets
+    ``Output`` widget and return it.
+
+    This is useful for "widget-ifying" things with a single call, e.g. a matplotlib figure.
+
+    .. code-block:: python
+
+        import matplotlib.pyplot as plt
+        from ipyoverlay import display_output, OverlayContainer
+
+        fig, ax = plt.subplots()
+        ax.scatter(data)
+
+        OverlayContainer(display_output(fig))
+    """
     out = ipw.Output()
     with out:
-        display(figure)
+        display(obj)
     return out
 
 
