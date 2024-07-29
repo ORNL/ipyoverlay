@@ -494,7 +494,7 @@ over the background.</p>
 <td><p>Add the passed widget as an overlay at the specified position.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.add_child_at_mpl_point" title="ipyoverlay.container.OverlayContainer.add_child_at_mpl_point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_child_at_mpl_point</span></code></a>(obj, axis, data_x, data_y)</p></td>
-<td><p></p></td>
+<td><p>Add the passed widget as an overlay and connect it to a matplotlib figure at the specified data location.</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_class</span></code>(className)</p></td>
 <td><p>Adds a class to the top level element of the widget.</p></td>
@@ -791,9 +791,18 @@ click/drag etc.</p></li>
 <dl class="py method">
 <dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.add_child_at_mpl_point">
 <span class="sig-name descname"><span class="pre">add_child_at_mpl_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.add_child_at_mpl_point" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Add the passed widget as an overlay and connect it to a matplotlib
+figure at the specified data location.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>obj</strong> (<em>Widget</em>) – </p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>Widget</em>) – The ipywidget to add, recommend wrapping in
+DecoratedWidgetWrapper to support additional features like
+click/drag etc.</p></li>
+<li><p><strong>axis</strong> (<em>Axes</em>) – The matplotlib axis object containing the data location to connect to.</p></li>
+<li><p><strong>data_x</strong> (<em>float</em>) – The x-value within the axis to show the connection endpoint.</p></li>
+<li><p><strong>data_y</strong> (<em>float</em>) – The y-value within the axis to show the connection endpoint.</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
