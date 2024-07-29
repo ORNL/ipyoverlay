@@ -1,0 +1,6 @@
+ipyoverlay.utils.convert\_pixel\_to\_mpl\_data
+==============================================
+
+.. currentmodule:: ipyoverlay.utils
+
+.. autofunction:: convert_pixel_to_mpl_data

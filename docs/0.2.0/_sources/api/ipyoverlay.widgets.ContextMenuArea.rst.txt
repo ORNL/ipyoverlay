@@ -1,0 +1,92 @@
+ipyoverlay.widgets.ContextMenuArea
+==================================
+
+.. currentmodule:: ipyoverlay.widgets
+
+.. autoclass:: ContextMenuArea
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~ContextMenuArea.__init__
+      ~ContextMenuArea.add_class
+      ~ContextMenuArea.add_traits
+      ~ContextMenuArea.blur
+      ~ContextMenuArea.class_own_trait_events
+      ~ContextMenuArea.class_own_traits
+      ~ContextMenuArea.class_trait_names
+      ~ContextMenuArea.class_traits
+      ~ContextMenuArea.close
+      ~ContextMenuArea.close_all
+      ~ContextMenuArea.focus
+      ~ContextMenuArea.get_manager_state
+      ~ContextMenuArea.get_state
+      ~ContextMenuArea.get_view_spec
+      ~ContextMenuArea.handle_comm_opened
+      ~ContextMenuArea.handle_control_comm_opened
+      ~ContextMenuArea.has_trait
+      ~ContextMenuArea.hold_sync
+      ~ContextMenuArea.hold_trait_notifications
+      ~ContextMenuArea.notify_change
+      ~ContextMenuArea.observe
+      ~ContextMenuArea.on_msg
+      ~ContextMenuArea.on_trait_change
+      ~ContextMenuArea.on_widget_constructed
+      ~ContextMenuArea.open
+      ~ContextMenuArea.remove_class
+      ~ContextMenuArea.send
+      ~ContextMenuArea.send_state
+      ~ContextMenuArea.set_state
+      ~ContextMenuArea.set_trait
+      ~ContextMenuArea.setup_instance
+      ~ContextMenuArea.trait_defaults
+      ~ContextMenuArea.trait_events
+      ~ContextMenuArea.trait_has_value
+      ~ContextMenuArea.trait_metadata
+      ~ContextMenuArea.trait_names
+      ~ContextMenuArea.trait_values
+      ~ContextMenuArea.traits
+      ~ContextMenuArea.unobserve
+      ~ContextMenuArea.unobserve_all
+      ~ContextMenuArea.vue_set_menu_visible
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~ContextMenuArea.area_id
+      ~ContextMenuArea.class_component_serialization
+      ~ContextMenuArea.comm
+      ~ContextMenuArea.components
+      ~ContextMenuArea.cross_validation_lock
+      ~ContextMenuArea.css
+      ~ContextMenuArea.data
+      ~ContextMenuArea.enabled
+      ~ContextMenuArea.events
+      ~ContextMenuArea.force_right_click
+      ~ContextMenuArea.keys
+      ~ContextMenuArea.layout
+      ~ContextMenuArea.log
+      ~ContextMenuArea.menu
+      ~ContextMenuArea.menu_id
+      ~ContextMenuArea.methods
+      ~ContextMenuArea.model_id
+      ~ContextMenuArea.tabbable
+      ~ContextMenuArea.template
+      ~ContextMenuArea.template_file
+      ~ContextMenuArea.tooltip
+      ~ContextMenuArea.widget
+      ~ContextMenuArea.widget_types
+      ~ContextMenuArea.widgets

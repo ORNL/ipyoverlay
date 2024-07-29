@@ -1,0 +1,1227 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" data-theme="dark">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ipyoverlay.container.OverlayContainer &#8212; IPyOverlay 0.2.0 documentation</title>
+
+
+
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "dark";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "dark";
+  </script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b1f64a84"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/ipyoverlay.container.OverlayContainer';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.15.4';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://ornl.github.io/ipyoverlay/stable/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner = true;
+        </script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ipyoverlay.utils" href="ipyoverlay.utils.html" />
+    <link rel="prev" title="ipyoverlay.container" href="ipyoverlay.container.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+
+
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="dark">
+
+
+
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  <div id="pst-scroll-pixel-helper"></div>
+
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+
+
+  <div class="col-lg-3 navbar-header-items__start">
+
+      <div class="navbar-item">
+
+
+
+
+
+<a class="navbar-brand logo" href="../index.html">
+
+
+
+
+
+
+    <p class="title logo__title">IPyOverlay 0.2.0 documentation</p>
+
+</a></div>
+
+  </div>
+
+  <div class="col-lg-9 navbar-header-items">
+
+    <div class="me-auto navbar-header-items__center">
+
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/ORNL/ipyoverlay/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+    </div>
+
+
+    <div class="navbar-header-items__end">
+
+        <div class="navbar-item navbar-persistent--container">
+
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+
+
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-2"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-2"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-2"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-2">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+
+
+
+
+
+
+
+
+          <a href="https://github.com/ORNL/ipyoverlay" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+
+
+
+
+
+
+
+
+          <a href="https://pypi.org/project/ipyoverlay/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+
+    </div>
+
+  </div>
+
+
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+
+
+
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+
+</div>
+
+    </header>
+
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+
+
+
+      <div class="bd-sidebar-primary bd-sidebar">
+
+
+
+  <div class="sidebar-header-items sidebar-primary__section">
+
+
+      <div class="sidebar-header-items__center">
+
+
+
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="../api_reference.html">
+    API Reference
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://github.com/ORNL/ipyoverlay/releases">
+    Changelog
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+
+
+      </div>
+
+
+
+      <div class="sidebar-header-items__end">
+
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button id="pst-version-switcher-button-3"
+      type="button"
+      class="version-switcher__button btn btn-sm dropdown-toggle"
+      data-bs-toggle="dropdown"
+      aria-haspopup="listbox"
+      aria-controls="pst-version-switcher-list-3"
+      aria-label="Version switcher list"
+    >
+      Choose version  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div id="pst-version-switcher-list-3"
+      class="version-switcher__menu dropdown-menu list-group-flush py-0"
+      role="listbox" aria-labelledby="pst-version-switcher-button-3">
+      <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script></div>
+
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+
+
+
+
+
+
+
+
+          <a href="https://github.com/ORNL/ipyoverlay" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+
+
+
+
+
+
+
+
+          <a href="https://pypi.org/project/ipyoverlay/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-python fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">PyPI</span></a>
+        </li>
+</ul></div>
+
+      </div>
+
+  </div>
+
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="ipyoverlay.mpl.html">ipyoverlay.mpl</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="ipyoverlay.mpl.event.html">ipyoverlay.mpl.event</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="ipyoverlay.mpl.event.on_mpl_point_click.html">ipyoverlay.mpl.event.on_mpl_point_click</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipyoverlay.mpl.event.MPLArtistEventHandler.html">ipyoverlay.mpl.event.MPLArtistEventHandler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ipyoverlay.mpl.event.MPLEventHandler.html">ipyoverlay.mpl.event.MPLEventHandler</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ipyoverlay.connection.html">ipyoverlay.connection</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.connection.Connection.html">ipyoverlay.connection.Connection</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="ipyoverlay.container.html">ipyoverlay.container</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">ipyoverlay.container.OverlayContainer</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ipyoverlay.utils.html">ipyoverlay.utils</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.utils.convert_mpl_data_to_pixel.html">ipyoverlay.utils.convert_mpl_data_to_pixel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.utils.convert_pixel_to_mpl_data.html">ipyoverlay.utils.convert_pixel_to_mpl_data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.utils.display_output.html">ipyoverlay.utils.display_output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.utils.vue_template_path.html">ipyoverlay.utils.vue_template_path</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="ipyoverlay.widgets.html">ipyoverlay.widgets</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.widgets.ContextMenu.html">ipyoverlay.widgets.ContextMenu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.widgets.ContextMenuArea.html">ipyoverlay.widgets.ContextMenuArea</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.widgets.DecoratedWidgetWrapper.html">ipyoverlay.widgets.DecoratedWidgetWrapper</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.widgets.PopupComponent.html">ipyoverlay.widgets.PopupComponent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ipyoverlay.widgets.WidgetWrapper.html">ipyoverlay.widgets.WidgetWrapper</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+
+
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+
+      <main id="main-content" class="bd-main" role="main">
+
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+
+    <div class="header-article-items__start">
+
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+
+    <li class="breadcrumb-item"><a href="../api_reference.html" class="nav-link">API Reference</a></li>
+
+
+    <li class="breadcrumb-item"><a href="ipyoverlay.container.html" class="nav-link">ipyoverlay.container</a></li>
+
+    <li class="breadcrumb-item active" aria-current="page">ipyoverlay.c...</li>
+  </ul>
+</nav>
+</div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+
+<div id="searchbox"></div>
+                <article class="bd-article">
+
+  <section id="ipyoverlay-container-overlaycontainer">
+<h1>ipyoverlay.container.OverlayContainer<a class="headerlink" href="#ipyoverlay-container-overlaycontainer" title="Permalink to this heading">#</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ipyoverlay.container.</span></span><span class="sig-name descname"><span class="pre">OverlayContainer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">VuetifyTemplate</span></code></p>
+<p>A wrapper for a background set of components that can render other ipywidgets
+over the background.</p>
+<p class="rubric">Methods</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code>([widget])</p></td>
+<td><p>Public constructor</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.add_child" title="ipyoverlay.container.OverlayContainer.add_child"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_child</span></code></a>(obj[, left, top])</p></td>
+<td><p>Add the passed widget as an overlay at the specified position.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.add_child_at_mpl_point" title="ipyoverlay.container.OverlayContainer.add_child_at_mpl_point"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_child_at_mpl_point</span></code></a>(obj, axis, data_x, data_y)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_class</span></code>(className)</p></td>
+<td><p>Adds a class to the top level element of the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_traits</span></code>(**traits)</p></td>
+<td><p>Dynamically add trait attributes to the Widget.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">blur</span></code>()</p></td>
+<td><p>Blur the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_own_trait_events</span></code>(name)</p></td>
+<td><p>Get a dict of all event handlers defined on this class, not a parent.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_own_traits</span></code>(**metadata)</p></td>
+<td><p>Get a dict of all the traitlets defined on this class, not a parent.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_trait_names</span></code>(**metadata)</p></td>
+<td><p>Get a list of all the names of this class' traits.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_traits</span></code>(**metadata)</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code>()</p></td>
+<td><p>Close method.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">close_all</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.connect_child_to_mpl" title="ipyoverlay.container.OverlayContainer.connect_child_to_mpl"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_child_to_mpl</span></code></a>(child, axis, data_x, data_y)</p></td>
+<td><p>Make a connection that moves around with a draggable child and a point in a matplotlib axis.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.connect_child_to_pixel" title="ipyoverlay.container.OverlayContainer.connect_child_to_pixel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_child_to_pixel</span></code></a>(child, point)</p></td>
+<td><p>Make a connection that moves around with a draggable child and a static point.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.connect_child_to_plotly" title="ipyoverlay.container.OverlayContainer.connect_child_to_plotly"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect_child_to_plotly</span></code></a>(child, fig_widget, ...)</p></td>
+<td><p>Make a connection that moves around with a draggable child and a point in a plotly figure.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.fire_on_rendered" title="ipyoverlay.container.OverlayContainer.fire_on_rendered"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fire_on_rendered</span></code></a>()</p></td>
+<td><p>Trigger all registered on_rendered callbacks.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.fire_on_resized" title="ipyoverlay.container.OverlayContainer.fire_on_resized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fire_on_resized</span></code></a>(width, height)</p></td>
+<td><p>Trigger all registered on_resized callbacks.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">focus</span></code>()</p></td>
+<td><p>Focus on the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.get_current_width_height" title="ipyoverlay.container.OverlayContainer.get_current_width_height"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_current_width_height</span></code></a>()</p></td>
+<td><p>Ask JS to update our current_width and current_height variables to reflect current overlay container dimensions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_manager_state</span></code>([drop_defaults, widgets])</p></td>
+<td><p>Returns the full state for a widget manager for embedding</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.get_relative_layout_position" title="ipyoverlay.container.OverlayContainer.get_relative_layout_position"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_relative_layout_position</span></code></a>(x, y, ...[, ...])</p></td>
+<td><p><dl class="field-list simple">
+<dt class="field-odd">param radius<span class="colon">:</span></dt>
+<dd class="field-odd"><p>How far out to get a position. Leave -1 to compute based on</p>
+</dd>
+</dl>
+</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_state</span></code>([key, drop_defaults])</p></td>
+<td><p>Gets the widget state, or a piece of it.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_view_spec</span></code>()</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_comm_opened</span></code>(comm, msg)</p></td>
+<td><p>Static method, called when a widget is constructed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">handle_control_comm_opened</span></code>(comm, msg)</p></td>
+<td><p>Class method, called when the comm-open message on the &quot;jupyter.widget.control&quot; comm channel is received</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">has_trait</span></code>(name)</p></td>
+<td><p>Returns True if the object has a trait with the specified name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_sync</span></code>()</p></td>
+<td><p>Hold syncing any state until the outermost context manager exits</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">hold_trait_notifications</span></code>()</p></td>
+<td><p>Context manager for bundling trait change notifications and cross validation.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.move_child" title="ipyoverlay.container.OverlayContainer.move_child"><code class="xref py py-obj docutils literal notranslate"><span class="pre">move_child</span></code></a>(child, x, y)</p></td>
+<td><p>Move the specified child to the specified (left, top).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.move_child_client_px" title="ipyoverlay.container.OverlayContainer.move_child_client_px"><code class="xref py py-obj docutils literal notranslate"><span class="pre">move_child_client_px</span></code></a>(child, x, y)</p></td>
+<td><p>Move the specified child to the specified (left, top).</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">notify_change</span></code>(change)</p></td>
+<td><p>Called when a property has changed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">observe</span></code>(handler[, names, type])</p></td>
+<td><p>Setup a handler to be called when a trait changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_msg</span></code>(callback[, remove])</p></td>
+<td><p>(Un)Register a custom msg receive callback.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.on_rendered" title="ipyoverlay.container.OverlayContainer.on_rendered"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_rendered</span></code></a>(callback)</p></td>
+<td><p>Register a callback to execute when the container is rendered and displayed.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.on_resized" title="ipyoverlay.container.OverlayContainer.on_resized"><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_resized</span></code></a>(callback)</p></td>
+<td><p>Register a callback to execute when the container's size is changed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_trait_change</span></code>([handler, name, remove])</p></td>
+<td><p>DEPRECATED: Setup a handler to be called when a trait changes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">on_widget_constructed</span></code>(callback)</p></td>
+<td><p>Registers a callback to be called when a widget is constructed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">open</span></code>()</p></td>
+<td><p>Open a comm to the frontend if one isn't already open.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.remove_child" title="ipyoverlay.container.OverlayContainer.remove_child"><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_child</span></code></a>(obj)</p></td>
+<td><p>Remove the passed child from the container.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">remove_class</span></code>(className)</p></td>
+<td><p>Removes a class from the top level element of the widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code>(content[, buffers])</p></td>
+<td><p>Sends a custom msg to the widget model in the front-end.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_state</span></code>([key])</p></td>
+<td><p>Sends the widget state, or a piece of it, to the front-end, if it exists.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_state</span></code>(sync_data)</p></td>
+<td><p>Called when a state is received from the front-end.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_trait</span></code>(name, value)</p></td>
+<td><p>Forcibly sets trait attribute, including read-only attributes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">setup_instance</span></code>(**kwargs)</p></td>
+<td><p>This is called <strong>before</strong> self.__init__ is called.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_defaults</span></code>(*names, **metadata)</p></td>
+<td><p>Return a trait's default value or a dictionary of them</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_events</span></code>([name])</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the event handlers of this class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_has_value</span></code>(name)</p></td>
+<td><p>Returns True if the specified trait has a value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_metadata</span></code>(traitname, key[, default])</p></td>
+<td><p>Get metadata values for trait by key.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_names</span></code>(**metadata)</p></td>
+<td><p>Get a list of all the names of this class' traits.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">trait_values</span></code>(**metadata)</p></td>
+<td><p>A <code class="docutils literal notranslate"><span class="pre">dict</span></code> of trait names and their values.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">traits</span></code>(**metadata)</p></td>
+<td><p>Get a <code class="docutils literal notranslate"><span class="pre">dict</span></code> of all the traits of this class.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve</span></code>(handler[, names, type])</p></td>
+<td><p>Remove a trait change handler.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">unobserve_all</span></code>([name])</p></td>
+<td><p>Remove trait change handlers of any type for the specified name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.vue_handle_child_mouse_down" title="ipyoverlay.container.OverlayContainer.vue_handle_child_mouse_down"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vue_handle_child_mouse_down</span></code></a>(event)</p></td>
+<td><p>Event handler for when the mouse is clicked on an overlay component.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.vue_handle_mouse_down" title="ipyoverlay.container.OverlayContainer.vue_handle_mouse_down"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vue_handle_mouse_down</span></code></a>(e)</p></td>
+<td><p>Event handler for when the mouse is clicked not on an overlay component.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.vue_handle_mouse_up" title="ipyoverlay.container.OverlayContainer.vue_handle_mouse_up"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vue_handle_mouse_up</span></code></a>(e)</p></td>
+<td><p>Event handler for when the mouse button is released.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.vue_handle_rendered" title="ipyoverlay.container.OverlayContainer.vue_handle_rendered"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vue_handle_rendered</span></code></a>(e)</p></td>
+<td><p>Event handler for when the componet is rendered in JS.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.vue_handle_resize" title="ipyoverlay.container.OverlayContainer.vue_handle_resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vue_handle_resize</span></code></a>(e)</p></td>
+<td><p>Event handler for when the container's size changes.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="rubric">Attributes</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.child_connections_info" title="ipyoverlay.container.OverlayContainer.child_connections_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">child_connections_info</span></code></a></p></td>
+<td><p>A list of lists containing the connection ids associated with each child widget.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.children" title="ipyoverlay.container.OverlayContainer.children"><code class="xref py py-obj docutils literal notranslate"><span class="pre">children</span></code></a></p></td>
+<td><p>The set of widgets rendered as overlays over the background widget.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">class_component_serialization</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">comm</span></code></p></td>
+<td><p>A trait which allows any value.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">components</span></code></p></td>
+<td><p>An instance of a Python dict.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.container_id" title="ipyoverlay.container.OverlayContainer.container_id"><code class="xref py py-obj docutils literal notranslate"><span class="pre">container_id</span></code></a></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">cross_validation_lock</span></code></p></td>
+<td><p>A contextmanager for running a block with our cross validation lock set to True.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">css</span></code></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.current_height" title="ipyoverlay.container.OverlayContainer.current_height"><code class="xref py py-obj docutils literal notranslate"><span class="pre">current_height</span></code></a></p></td>
+<td><p>Read-only traitlet used for JS to communicate actual current size to python side.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.current_width" title="ipyoverlay.container.OverlayContainer.current_width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">current_width</span></code></a></p></td>
+<td><p>Read-only traitlet used for JS to communicate actual current size to python side.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.detail_connections" title="ipyoverlay.container.OverlayContainer.detail_connections"><code class="xref py py-obj docutils literal notranslate"><span class="pre">detail_connections</span></code></a></p></td>
+<td><p>A list of connection widgets for each child.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.dragging" title="ipyoverlay.container.OverlayContainer.dragging"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dragging</span></code></a></p></td>
+<td><p>A boolean (True, False) trait.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.dragging_index" title="ipyoverlay.container.OverlayContainer.dragging_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dragging_index</span></code></a></p></td>
+<td><p>An int trait.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">events</span></code></p></td>
+<td><p>An instance of a Python list.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.expandable" title="ipyoverlay.container.OverlayContainer.expandable"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expandable</span></code></a></p></td>
+<td><p>Whether to allow (and show button for) expanding the container to take up full notebook window.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.expanded" title="ipyoverlay.container.OverlayContainer.expanded"><code class="xref py py-obj docutils literal notranslate"><span class="pre">expanded</span></code></a></p></td>
+<td><p>Get/set whether currently expanded to full notebook window or not.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.height" title="ipyoverlay.container.OverlayContainer.height"><code class="xref py py-obj docutils literal notranslate"><span class="pre">height</span></code></a></p></td>
+<td><p>Height of the container, set to 'auto' to autoscale.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">keys</span></code></p></td>
+<td><p>The traits which are synced.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">layout</span></code></p></td>
+<td><p>An instance trait which coerces a dict to an instance.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></p></td>
+<td><p>A trait whose value must be an instance of a specified class.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">methods</span></code></p></td>
+<td><p>A trait for unicode strings.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">model_id</span></code></p></td>
+<td><p>Gets the model id of this widget.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tabbable</span></code></p></td>
+<td><p>Is widget tabbable?</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">template</span></code></p></td>
+<td><p>A trait type representing a Union type.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">template_file</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">tooltip</span></code></p></td>
+<td><p>A tooltip caption.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.widget" title="ipyoverlay.container.OverlayContainer.widget"><code class="xref py py-obj docutils literal notranslate"><span class="pre">widget</span></code></a></p></td>
+<td><p>The background widget/layout this container should wrap and render things over.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">widget_types</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">widgets</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#ipyoverlay.container.OverlayContainer.width" title="ipyoverlay.container.OverlayContainer.width"><code class="xref py py-obj docutils literal notranslate"><span class="pre">width</span></code></a></p></td>
+<td><p>Width of the container, set to 'auto' to autoscale.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.add_child">
+<span class="sig-name descname"><span class="pre">add_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">left</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.add_child" title="Permalink to this definition">#</a></dt>
+<dd><p>Add the passed widget as an overlay at the specified position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>obj</strong> (<em>Widget</em>) – The ipywidget to add, recommend wrapping in
+DecoratedWidgetWrapper to support additional features like
+click/drag etc.</p></li>
+<li><p><strong>left</strong> (<em>int</em>) – Position from the left in pixels to render widget at.</p></li>
+<li><p><strong>top</strong> (<em>int</em>) – Position from the top in pixels to render widget at.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.add_child_at_mpl_point">
+<span class="sig-name descname"><span class="pre">add_child_at_mpl_point</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.add_child_at_mpl_point" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>obj</strong> (<em>Widget</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.child_connections_info">
+<span class="sig-name descname"><span class="pre">child_connections_info</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.child_connections_info" title="Permalink to this definition">#</a></dt>
+<dd><p>A list of lists containing the connection ids associated with each child widget.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.children">
+<span class="sig-name descname"><span class="pre">children</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.children" title="Permalink to this definition">#</a></dt>
+<dd><p>The set of widgets rendered as overlays over the background widget.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.connect_child_to_mpl">
+<span class="sig-name descname"><span class="pre">connect_child_to_mpl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.connect_child_to_mpl" title="Permalink to this definition">#</a></dt>
+<dd><p>Make a connection that moves around with a draggable child and a point
+in a matplotlib axis.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>child</strong> – The widget to draw a connection line from.</p></li>
+<li><p><strong>axis</strong> (<em>Axes</em>) – The matplotlib axis object containing the data location to connect to.</p></li>
+<li><p><strong>data_x</strong> (<em>float</em>) – The x-value within the axis to show the connection endpoint.</p></li>
+<li><p><strong>data_y</strong> (<em>float</em>) – The y-value within the axis to show the connection endpoint.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.connect_child_to_pixel">
+<span class="sig-name descname"><span class="pre">connect_child_to_pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">point</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.connect_child_to_pixel" title="Permalink to this definition">#</a></dt>
+<dd><p>Make a connection that moves around with a draggable child and a static point.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>point</strong> (<em>tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – </p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="ipyoverlay.connection.Connection.html#ipyoverlay.connection.Connection" title="ipyoverlay.connection.Connection"><em>Connection</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.connect_child_to_plotly">
+<span class="sig-name descname"><span class="pre">connect_child_to_plotly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fig_widget</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.connect_child_to_plotly" title="Permalink to this definition">#</a></dt>
+<dd><p>Make a connection that moves around with a draggable child and a point
+in a plotly figure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fig_widget</strong> (<em>FigureWidget</em>) – </p></li>
+<li><p><strong>data_x</strong> (<em>float</em>) – </p></li>
+<li><p><strong>data_y</strong> (<em>float</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.container_id">
+<span class="sig-name descname"><span class="pre">container_id</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.container_id" title="Permalink to this definition">#</a></dt>
+<dd><p>A trait for unicode strings.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.current_height">
+<span class="sig-name descname"><span class="pre">current_height</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.current_height" title="Permalink to this definition">#</a></dt>
+<dd><p>Read-only traitlet used for JS to communicate actual current size to python side.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.current_width">
+<span class="sig-name descname"><span class="pre">current_width</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.current_width" title="Permalink to this definition">#</a></dt>
+<dd><p>Read-only traitlet used for JS to communicate actual current size to python side.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.detail_connections">
+<span class="sig-name descname"><span class="pre">detail_connections</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.detail_connections" title="Permalink to this definition">#</a></dt>
+<dd><p>A list of connection widgets for each child.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.dragging">
+<span class="sig-name descname"><span class="pre">dragging</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.dragging" title="Permalink to this definition">#</a></dt>
+<dd><p>A boolean (True, False) trait.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.dragging_index">
+<span class="sig-name descname"><span class="pre">dragging_index</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.dragging_index" title="Permalink to this definition">#</a></dt>
+<dd><p>An int trait.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.expandable">
+<span class="sig-name descname"><span class="pre">expandable</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.expandable" title="Permalink to this definition">#</a></dt>
+<dd><p>Whether to allow (and show button for) expanding the container to take up full
+notebook window.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.expanded">
+<span class="sig-name descname"><span class="pre">expanded</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.expanded" title="Permalink to this definition">#</a></dt>
+<dd><p>Get/set whether currently expanded to full notebook window or not.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.fire_on_rendered">
+<span class="sig-name descname"><span class="pre">fire_on_rendered</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.fire_on_rendered" title="Permalink to this definition">#</a></dt>
+<dd><p>Trigger all registered on_rendered callbacks.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.fire_on_resized">
+<span class="sig-name descname"><span class="pre">fire_on_resized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.fire_on_resized" title="Permalink to this definition">#</a></dt>
+<dd><p>Trigger all registered on_resized callbacks.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>width</strong> (<em>int</em>) – </p></li>
+<li><p><strong>height</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.get_current_width_height">
+<span class="sig-name descname"><span class="pre">get_current_width_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.get_current_width_height" title="Permalink to this definition">#</a></dt>
+<dd><p>Ask JS to update our current_width and current_height variables
+to reflect current overlay container dimensions.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.get_relative_layout_position">
+<span class="sig-name descname"><span class="pre">get_relative_layout_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_points_x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relative_points_y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">radius</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mpl'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.get_relative_layout_position" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>radius</strong> (<em>float</em><em> | </em><em>int</em>) – How far out to get a position. Leave -1 to compute based on
+relative points.</p></li>
+<li><p><strong>source</strong> (<em>str</em>) – How to consider data</p></li>
+<li><p><strong>force</strong> (<em>bool</em>) – Whether to move other widgets around to make fit better or not.</p></li>
+<li><p><strong>relative_points_x</strong> (<em>ndarray</em>) – </p></li>
+<li><p><strong>relative_points_y</strong> (<em>ndarray</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[float, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.height">
+<span class="sig-name descname"><span class="pre">height</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.height" title="Permalink to this definition">#</a></dt>
+<dd><p>Height of the container, set to ‘auto’ to autoscale.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.move_child">
+<span class="sig-name descname"><span class="pre">move_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.move_child" title="Permalink to this definition">#</a></dt>
+<dd><p>Move the specified child to the specified (left, top).</p>
+<p>The pixel values for left/top should be local to the container.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – </p></li>
+<li><p><strong>y</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.move_child_client_px">
+<span class="sig-name descname"><span class="pre">move_child_client_px</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">child</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.move_child_client_px" title="Permalink to this definition">#</a></dt>
+<dd><p>Move the specified child to the specified (left, top).</p>
+<p>The pixel values for left/top are clientX/clientY values wrt
+to the page, (e.g. what you would get from mouse events), not
+the left/top within the container.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>int</em>) – </p></li>
+<li><p><strong>y</strong> (<em>int</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.on_rendered">
+<span class="sig-name descname"><span class="pre">on_rendered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.on_rendered" title="Permalink to this definition">#</a></dt>
+<dd><p>Register a callback to execute when the container is rendered and displayed.</p>
+<p>Nothing is passed to the callback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> (<em>Callable</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.on_resized">
+<span class="sig-name descname"><span class="pre">on_resized</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">callback</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.on_resized" title="Permalink to this definition">#</a></dt>
+<dd><p>Register a callback to execute when the container’s size is changed.</p>
+<p>The callback will be passed the new width and height as integers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>callback</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>, </em><em>None</em><em>]</em>) – </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.remove_child">
+<span class="sig-name descname"><span class="pre">remove_child</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.remove_child" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove the passed child from the container.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.vue_handle_child_mouse_down">
+<span class="sig-name descname"><span class="pre">vue_handle_child_mouse_down</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.vue_handle_child_mouse_down" title="Permalink to this definition">#</a></dt>
+<dd><p>Event handler for when the mouse is clicked on an overlay component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.vue_handle_mouse_down">
+<span class="sig-name descname"><span class="pre">vue_handle_mouse_down</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.vue_handle_mouse_down" title="Permalink to this definition">#</a></dt>
+<dd><p>Event handler for when the mouse is clicked not on an overlay component.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.vue_handle_mouse_up">
+<span class="sig-name descname"><span class="pre">vue_handle_mouse_up</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.vue_handle_mouse_up" title="Permalink to this definition">#</a></dt>
+<dd><p>Event handler for when the mouse button is released.</p>
+<p>Connection endpoint updates get handled here.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.vue_handle_rendered">
+<span class="sig-name descname"><span class="pre">vue_handle_rendered</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.vue_handle_rendered" title="Permalink to this definition">#</a></dt>
+<dd><p>Event handler for when the componet is rendered in JS.
+This gets propagated through on_resized handlers.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.vue_handle_resize">
+<span class="sig-name descname"><span class="pre">vue_handle_resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">e</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.vue_handle_resize" title="Permalink to this definition">#</a></dt>
+<dd><p>Event handler for when the container’s size changes. This gets
+propagated through on_resized handlers.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.widget">
+<span class="sig-name descname"><span class="pre">widget</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.widget" title="Permalink to this definition">#</a></dt>
+<dd><p>The background widget/layout this container should wrap and render things over.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ipyoverlay.container.OverlayContainer.width">
+<span class="sig-name descname"><span class="pre">width</span></span><a class="headerlink" href="#ipyoverlay.container.OverlayContainer.width" title="Permalink to this definition">#</a></dt>
+<dd><p>Width of the container, set to ‘auto’ to autoscale.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+                </article>
+
+
+
+
+
+                <footer class="prev-next-footer d-print-none">
+
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ipyoverlay.container.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">ipyoverlay.container</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ipyoverlay.utils.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">ipyoverlay.utils</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+
+            </div>
+
+
+
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer"><code class="docutils literal notranslate"><span class="pre">OverlayContainer</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.add_child"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.add_child()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.add_child_at_mpl_point"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.add_child_at_mpl_point()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.child_connections_info"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.child_connections_info</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.children"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.children</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.connect_child_to_mpl"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.connect_child_to_mpl()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.connect_child_to_pixel"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.connect_child_to_pixel()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.connect_child_to_plotly"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.connect_child_to_plotly()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.container_id"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.container_id</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.current_height"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.current_height</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.current_width"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.current_width</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.detail_connections"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.detail_connections</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.dragging"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.dragging</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.dragging_index"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.dragging_index</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.expandable"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.expandable</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.expanded"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.expanded</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.fire_on_rendered"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.fire_on_rendered()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.fire_on_resized"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.fire_on_resized()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.get_current_width_height"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.get_current_width_height()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.get_relative_layout_position"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.get_relative_layout_position()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.height"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.height</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.move_child"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.move_child()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.move_child_client_px"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.move_child_client_px()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.on_rendered"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.on_rendered()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.on_resized"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.on_resized()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.remove_child"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.remove_child()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.vue_handle_child_mouse_down"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.vue_handle_child_mouse_down()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.vue_handle_mouse_down"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.vue_handle_mouse_down()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.vue_handle_mouse_up"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.vue_handle_mouse_up()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.vue_handle_rendered"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.vue_handle_rendered()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.vue_handle_resize"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.vue_handle_resize()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.widget"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.widget</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipyoverlay.container.OverlayContainer.width"><code class="docutils literal notranslate"><span class="pre">OverlayContainer.width</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/ipyoverlay.container.OverlayContainer.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+
+
+          </div>
+          <footer class="bd-footer-content">
+
+          </footer>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+
+    <div class="footer-items__start">
+
+        <div class="footer-item">
+
+  <p class="copyright">
+
+      © Copyright 2024, UT Battelle, LLC.
+      <br/>
+
+  </p>
+</div>
+
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    <br/>
+  </p>
+</div>
+
+    </div>
+
+
+
+    <div class="footer-items__end">
+
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.4.
+</p></div>
+
+    </div>
+
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+ipyoverlay.utils.display\_output
+================================
+
+.. currentmodule:: ipyoverlay.utils
+
+.. autofunction:: display_output

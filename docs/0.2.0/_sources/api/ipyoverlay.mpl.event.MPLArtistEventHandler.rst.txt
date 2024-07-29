@@ -1,0 +1,35 @@
+ipyoverlay.mpl.event.MPLArtistEventHandler
+==========================================
+
+.. currentmodule:: ipyoverlay.mpl.event
+
+.. autoclass:: MPLArtistEventHandler
+   :members:
+   :show-inheritance:
+   :inherited-members:
+   :exclude-members: template_file
+
+
+
+
+   .. rubric:: Methods
+
+   .. autosummary::
+
+      ~MPLArtistEventHandler.__init__
+      ~MPLArtistEventHandler.connect
+      ~MPLArtistEventHandler.disconnect
+
+
+
+
+
+   .. rubric:: Attributes
+
+   .. autosummary::
+
+      ~MPLArtistEventHandler.button
+      ~MPLArtistEventHandler.callback_id
+      ~MPLArtistEventHandler.tolerance
+      ~MPLArtistEventHandler.axes
+      ~MPLArtistEventHandler.callback

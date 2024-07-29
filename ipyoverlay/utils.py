@@ -4,9 +4,9 @@ for the various viz libraries."""
 import importlib.resources
 
 import ipywidgets as ipw
+from IPython.display import display
 from matplotlib.axes import Axes
 
-from IPython.display import display
 
 def display_output(obj):
     """Render the passed object via ``display()`` in a new ipywidgets

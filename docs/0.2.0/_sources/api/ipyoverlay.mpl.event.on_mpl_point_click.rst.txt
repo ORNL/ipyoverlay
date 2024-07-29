@@ -1,0 +1,6 @@
+ipyoverlay.mpl.event.on\_mpl\_point\_click
+==========================================
+
+.. currentmodule:: ipyoverlay.mpl.event
+
+.. autofunction:: on_mpl_point_click

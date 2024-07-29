@@ -14,7 +14,7 @@ from matplotlib.axes import Axes
 from plotly.graph_objects import FigureWidget
 
 from .connection import Connection
-from .utils import vue_template_path, convert_mpl_data_to_pixel
+from .utils import convert_mpl_data_to_pixel, vue_template_path
 from .widgets import DecoratedWidgetWrapper
 
 
@@ -66,8 +66,7 @@ class OverlayContainer(v.VuetifyTemplate):
     def __init__(self, widget=None, **kwargs):
         super().__init__(**kwargs)
 
-        # we add 'c' to the beginning to ensure id starts with letter, required
-        # for html4 https://stackoverflow.com/questions/34777481/failed-to-execute-query-selector-on-document-id-is-not-a-valid-selector
+        # we add 'c' to the beginning to ensure id starts with letter, required for html4
         self.container_id = "c" + str(uuid.uuid4())
 
         self._resized_callbacks: list[Callable[[int, int]], None] = []
@@ -221,7 +220,20 @@ class OverlayContainer(v.VuetifyTemplate):
     # PUBLIC FUNCTIONS
     # ============================================================
 
-    def add_child_at_mpl_point(self, obj: ipw.Widget, axis, data_x, data_y):
+    def add_child_at_mpl_point(
+        self, obj: ipw.Widget, axis: Axes, data_x: float, data_y: float
+    ):
+        """Add the passed widget as an overlay and connect it to a matplotlib
+        figure at the specified data location.
+
+        Args:
+            obj (Widget): The ipywidget to add, recommend wrapping in
+                DecoratedWidgetWrapper to support additional features like
+                click/drag etc.
+            axis (Axes): The matplotlib axis object containing the data location to connect to.
+            data_x (float): The x-value within the axis to show the connection endpoint.
+            data_y (float): The y-value within the axis to show the connection endpoint.
+        """
         px_x, px_y = convert_mpl_data_to_pixel(axis, data_x, data_y)
         self.add_child(obj, px_x + 10, px_y + 10)
         self.connect_child_to_mpl(obj, axis, data_x, data_y)
