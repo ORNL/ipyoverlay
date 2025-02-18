@@ -16,11 +16,16 @@ container.connect_child_to_pixel(overlay, (20, 20))
 container
 """
 
-from . import mpl
+from ipyoverlay import mpl
 
 # flake8: noqa
-from .container import OverlayContainer
-from .utils import display_output
-from .widgets import ContextMenu, ContextMenuArea, DecoratedWidgetWrapper, WidgetWrapper
+from ipyoverlay.container import OverlayContainer
+from ipyoverlay.utils import display_output
+from ipyoverlay.widgets import (
+    ContextMenu,
+    ContextMenuArea,
+    DecoratedWidgetWrapper,
+    WidgetWrapper,
+)
 
 __version__ = "0.2.0"
